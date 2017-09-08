@@ -10,7 +10,6 @@ mat.inverse = function(mat, type){
          svdTrunc ={ s=svd(mat); ss <- cumsum(s$d); len <- length(ss); ss <- ss/ss[len];  rk <- min(which(pmin((ss - param), (rep(0, len))) == 0));D <- as.matrix(diag(1/s$d)[1:rk, 1:rk]); U <- s$u[, 1:rk]; U %*% D %*% t(U)},
          moorePenrose = ginv(mat),
          solve = solve(mat)
-         #Useless Comment
   ) 
 } # end mat.inverse  
 # verif : OK
